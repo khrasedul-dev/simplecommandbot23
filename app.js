@@ -2,6 +2,10 @@ const { Composer } = require('micro-bot')
 
 const bot = new Composer()
 
+bot.start(ctx=>{
+    ctx.telegram.sendMessage(ctx.chat.id , `This is command bot for groups`).catch((e)=>console.log(e))
+})
+
 bot.on('new_chat_members',ctx=>{
     ctx.telegram.sendMessage(ctx.chat.id , `Hello ${ctx.chat.id}, \nWelcome to Ready4player Multi-Metaverse Gaming `).catch((e)=>console.log(e))
 })
